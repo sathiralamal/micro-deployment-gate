@@ -8,6 +8,15 @@ import datetime
 from data_fetcher import fetch_all_macro_data, generate_synthetic_macro_data
 from blend_engine import compute_all_signals, blend_deployment_score, calculate_historical_scores
 
+# Required by deployment platforms that look for a top-level application object.
+# Keep the Streamlit dashboard working as-is while exposing a conventional app export.
+app = st
+application = app
+
+
+def main():
+    return st
+
 # Page Configuration
 st.set_page_config(
     page_title="Macro Market Deployment Gating System",
